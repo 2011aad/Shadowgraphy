@@ -1,6 +1,5 @@
 package fpe
 
-// #cgo LDFLAGS: -L${SRCDIR} -lshadow_fpe_export -Wl,-rpath=${SRCDIR}
 // #include "fpe_export.h"
 import "C"
 import (

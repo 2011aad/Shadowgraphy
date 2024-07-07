@@ -196,7 +196,7 @@ endif()
 
 # [option] SHADOW_BUILD_C_EXPORT (default: ON)
 set(SHADOW_BUILD_C_EXPORT_OPTION_STR "Build C export library for Shadow")
-option(SHADOW_BUILD_C_EXPORT ${SHADOW_BUILD_C_EXPORT_OPTION_STR} OFF)
+option(SHADOW_BUILD_C_EXPORT ${SHADOW_BUILD_C_EXPORT_OPTION_STR} ON)
 message(STATUS "SHADOW_BUILD_C_EXPORT: ${SHADOW_BUILD_C_EXPORT}")
 
 if(SHADOW_BUILD_C_EXPORT)
@@ -206,9 +206,9 @@ if(SHADOW_BUILD_C_EXPORT)
                                                   $<INSTALL_INTERFACE:${SHADOW_INCLUDES_INSTALL_DIR}>)
     target_include_directories(fpe_export PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)
     target_link_libraries(fpe_export PRIVATE fpe)
-    set_target_properties(fpe_export PROPERTIES VERSION ${SHADOW_VERSION})
-    set_target_properties(fpe_export PROPERTIES OUTPUT_NAME shadow_fpe_export)
-    set_target_properties(fpe_export PROPERTIES SOVERSION ${SHADOW_VERSION_MAJOR}.${SHADOW_VERSION_MINOR})
+    #set_target_properties(fpe_export PROPERTIES VERSION ${SHADOW_VERSION})
+    set_target_properties(fpe_export PROPERTIES OUTPUT_NAME shadow_fpe_export_arm)
+    #set_target_properties(fpe_export PROPERTIES SOVERSION ${SHADOW_VERSION_MAJOR}.${SHADOW_VERSION_MINOR})
     install(TARGETS fpe_export EXPORT ShadowTargets
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
