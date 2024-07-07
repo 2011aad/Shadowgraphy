@@ -2,5 +2,5 @@
 
 package fpe
 
-// #cgo LDFLAGS: -L${SRCDIR}/lib -lshadow_fpe_export -Wl,-rpath=${SRCDIR}/lib
+// #cgo LDFLAGS: -L${SRCDIR}/lib -lshadow_fpe_export_linux_amd64 -lstdc++
 import "C"
