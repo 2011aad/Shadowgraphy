@@ -2,5 +2,5 @@
 
 package fpe
 
-// #cgo LDFLAGS: -L${SRCDIR}/lib -lshadow_fpe_export_darwin_arm64 -lstdc++
+// #cgo LDFLAGS: -L${SRCDIR}/lib -lshadow_fpe_export_darwin_arm64 -lstdc++ -lm
 import "C"
